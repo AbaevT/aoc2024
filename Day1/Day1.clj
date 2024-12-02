@@ -10,7 +10,7 @@
   (let [input (read-input file)]
     (reduce + (map abs (map - (sort (map first input)) (sort (map second input)))))))
 
-(printf "total distance is: %s" (total-distance "1/input.txt"))
+(printf "total distance is: %s" (total-distance "Day1/input.txt"))
 (newline)
 
 (defn similarity [file]
@@ -18,4 +18,4 @@
     (let [counts (group-by identity (map second input))]
       (reduce + (map #(* % (count (get counts % '()))) (map first input))))))
 
-(printf "similarity is: %s" (similarity "1/input.txt"))
+(printf "similarity is: %s" (similarity "Day1/input.txt"))
